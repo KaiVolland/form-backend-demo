@@ -6,6 +6,7 @@ coverage
 nginx/certs/*
 !nginx/certs/.gitkeep
 form-backend/uploads
+geoserver/geoserver_data/*
 
 # IntelliJ IDEA
 .idea

@@ -33,6 +33,7 @@ services:
     depends_on:
       - mkcert
       - keycloak
+      - geoserver
     environment:
       FORMCAPTURE_HOST: ${HOSTNAME}
     image: nginx:1.28-alpine-slim
