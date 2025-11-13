@@ -53,7 +53,7 @@ CREATE TABLE sampledata.fountains (
     id integer NOT NULL,
     name character varying,
     type integer,
-    geom geometry(Point, 4326)
+    geom geometry(Point, 25832)
 );
 
 ALTER TABLE sampledata.fountains OWNER TO postgres;
