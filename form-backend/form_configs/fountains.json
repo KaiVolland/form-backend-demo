@@ -8,7 +8,7 @@
           "tableName": "fountain_types",
           "idColumn": "id"
         },
-        "includedProperties": ["id"],
+        "includedProperties": [ "id" ],
         "properties": {
           "id": {
             "resolveAsEnum": true,
@@ -24,8 +24,8 @@
     "pageSize": 5
   },
   "access": {
-    "read": ["fountains_editor"],
-    "write": ["fountains_editor"]
+    "read": [ "fountains_editor" ],
+    "write": [ "fountains_editor" ]
   },
   "properties": {
     "type": {
