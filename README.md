@@ -4,12 +4,25 @@
 
 ## Prerequisites for Development
 
+1. Ensure you have `docker` and `docker-compose` installed on your machine.
+1. Outcomment the following lines in the `nginx/dev.conf` file:
+    ```nginx
+    # location /form-backend/ {
+    #   proxy_pass http://form-backend:3000/;
+    #   include /etc/nginx/proxy_params;
+    # }
+    ```
 1. Run `initDev.sh` to set all variables.
     * This script will prompt you for the local checkout of form-backend (formcapture)
     * Alternatively, you can pass the path as an argument: `./initDev.sh --form-backend-base=<<my-checkout>>/formcapture/form-backend`
     * If you want to re-initialize the setup, you have to clean up the setup before e.g., by running `docker compose down --remove-orphans ; sudo rm -rf postgres/data postgres-keycloak/data .env` to remove containers, existing databases and `.env` files.
+1. Revert the changes in `nginx/dev.conf` after running the script.
 1. Run `docker compose up -d` to start the setup.
     * During the first run, a ssl certificate for your local development is created and saved in `nginx/certs`.
+1. You might need to restart nginx and form-backend containers after the first run to ensure that the everything is properly loaded:
+    ```bash
+    docker compose restart nginx form-backend
+    ```
 1. Ensure sufficient permissions for `./form-backend/uploads/` (e.g. `chmod -R 777 form-backend/uploads`)
 
 ## Run Application
